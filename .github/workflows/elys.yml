@@ -84,9 +84,9 @@ jobs:
         run:  echo 'Signed APK is ${{ steps.sign_app.outputs.signedReleaseFile }}' 
         
       - name: test 
-         run: |
-           pwd
-           ls -laR
+        run: |
+          pwd
+          ls -laR
        
 
       - name: Rename release APK
