@@ -10,6 +10,10 @@ on:
 
 permissions: write-all
 
+defaults:
+  run:
+    working-directory: Speedtest-Android
+    
 jobs:
   build-apk:
     runs-on: ubuntu-latest
