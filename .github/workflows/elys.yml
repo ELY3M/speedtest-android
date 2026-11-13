@@ -99,7 +99,7 @@ jobs:
           prerelease: false
           draft: false
           body: ${{ github.event.head_commit.message }}
-          files: ${{ github.event.repository.name }}-${{ env.NOW }}.apk
+          files: app/build/outputs/apk/release/${{ github.event.repository.name }}-${{ env.NOW }}.apk
           name: "APK Release ${{ env.NOW }}" 
          
       
