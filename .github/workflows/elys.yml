@@ -82,16 +82,17 @@ jobs:
           
       - name: Output Signed APK
         run:  echo 'Signed APK is ${{ steps.sign_app.outputs.signedReleaseFile }}' 
-        
+               
+      - name: Rename release APK
+        run: | 
+           cp app/build/outputs/apk/release/app-release-unsigned-signed.apk ${{ github.event.repository.name }}-${{ env.NOW }}.apk
+
       - name: test 
         run: |
           pwd
           ls -la app/build/outputs/apk/release
-       
-      - name: Rename release APK
-        run: | 
-           cp app/build/outputs/apk/release/app-release-unsigned-signed.apk ${{ github.event.repository.name }}-${{ env.NOW }}.apk
-                  
+          ls -la
+          
       - name: Publish GitHub release
         uses: softprops/action-gh-release@v2
         with:
