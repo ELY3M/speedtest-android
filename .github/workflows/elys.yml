@@ -45,7 +45,7 @@ jobs:
       - name: Build APK
         run: |
             chmod +x gradlew        
-            ./gradlew assembleRelease
+            ./Speedtest-Android/gradlew assembleRelease
         
       - name: current dir
         run: | 
