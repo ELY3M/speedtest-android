@@ -21,14 +21,16 @@ jobs:
                 
       - uses: thecodemonkey/action-get-gradle-version@master
         id: gradleversion
-        
+        with: 
+          file: Speedtest-Android/build.gradle.kts
+    
       - name: Show Grade Version          
         run: | 
           echo gradle version: ${{ steps.gradleversion.outputs.version }}      
          
       - uses: actions/setup-java@v5
         with:
-          distribution: 'zulu'
+          distribution: temurin
           java-version: 21
 
       - name: Setup Android SDK
