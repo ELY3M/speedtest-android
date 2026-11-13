@@ -43,9 +43,12 @@ jobs:
           gradle-home-cache-cleanup: true
           
       - name: Build APK
-        run: |
-            chmod +x Speedtest-Android/gradlew        
-            ./Speedtest-Android/gradlew assembleRelease
+        run: ./gradlew :app:assembleRelease   
+          
+      # - name: Build APK
+        # run: |
+            # chmod +x Speedtest-Android/gradlew        
+            # ./Speedtest-Android/gradlew assembleRelease
         
       - name: current dir
         run: | 
