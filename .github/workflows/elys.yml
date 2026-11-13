@@ -48,17 +48,11 @@ jobs:
           
       - name: Build APK
         run: ./gradlew :app:assembleRelease   
-          
-      # - name: Build APK
-        # run: |
-            # chmod +x Speedtest-Android/gradlew        
-            # ./Speedtest-Android/gradlew assembleRelease
-        
-      - name: current dir
-        run: | 
-            pwd
-            ls -la Speedtest-Android/app/build/outputs/apk/release 
 
+      - uses: actions/upload-artifact@v7
+        with:
+          path: Speedtest-Android/app/build/outputs/apk/release/*.apk
+          
       #old - /usr/local/lib/android/sdk/build-tools/
       #new - $ANDROID_HOME/build-tools/
       - name: Setup build tool version variable
